@@ -1,0 +1,41 @@
+npm WARN ignoring workspace config at /Users/dv/src/cuegenerator-v2/apps/svelte/.npmrc 
+
+> svelte@0.0.1 build
+> vite build
+
+
+vite v4.3.8 building SSR bundle for production...
+transforming...
+✓ 49 modules transformed.
+rendering chunks...
+
+vite v4.3.8 building for production...
+transforming...
+✓ 40 modules transformed.
+rendering chunks...
+computing gzip size...
+.svelte-kit/output/client/_app/version.json                              0.03 kB │ gzip: 0.05 kB
+.svelte-kit/output/client/vite-manifest.json                             1.83 kB │ gzip: 0.37 kB
+.svelte-kit/output/client/_app/immutable/nodes/0.6ca3df57.js             0.55 kB │ gzip: 0.37 kB
+.svelte-kit/output/client/_app/immutable/nodes/2.ad52e74a.js             0.83 kB │ gzip: 0.48 kB
+.svelte-kit/output/client/_app/immutable/nodes/1.a6773496.js             0.98 kB │ gzip: 0.57 kB
+.svelte-kit/output/client/_app/immutable/chunks/singletons.def24050.js   2.84 kB │ gzip: 1.43 kB
+.svelte-kit/output/client/_app/immutable/entry/app.bff953e7.js           5.50 kB │ gzip: 2.19 kB
+.svelte-kit/output/client/_app/immutable/chunks/index.6dba6488.js        7.06 kB │ gzip: 2.86 kB
+.svelte-kit/output/client/_app/immutable/entry/start.7dc53c36.js        23.88 kB │ gzip: 9.47 kB
+✓ built in 481ms
+.svelte-kit/output/server/vite-manifest.json                   1.31 kB
+.svelte-kit/output/server/internal.js                          0.19 kB
+.svelte-kit/output/server/entries/fallbacks/layout.svelte.js   0.24 kB
+.svelte-kit/output/server/entries/pages/_page.svelte.js        0.31 kB
+.svelte-kit/output/server/entries/fallbacks/error.svelte.js    0.83 kB
+.svelte-kit/output/server/chunks/index.js                      3.27 kB
+.svelte-kit/output/server/chunks/internal.js                   5.36 kB
+.svelte-kit/output/server/index.js                            86.06 kB
+
+Run npm run preview to preview your production build locally.
+
+> Using @sveltejs/adapter-auto
+  Could not detect a supported production environment. See https://kit.svelte.dev/docs/adapters to learn how to configure your app to run on the platform of your choosing
+  ✔ done
+✓ built in 2.23s

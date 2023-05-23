@@ -11,7 +11,8 @@
     "test": "turbo run test",
     "build": "turbo run build",
     "lint": "turbo run lint",
-    "pre-deploy": "turbo run pre-deploy"
+    "pre-deploy": "turbo run pre-deploy",
+    "dev": "turbo run dev"
   },
   "author": "Dmitry Varennikov",
   "license": "ISC",
