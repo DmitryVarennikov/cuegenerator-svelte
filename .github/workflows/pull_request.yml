@@ -1,0 +1,12 @@
+name: Pre-deploy on PR
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  pre_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - run: npm run pre-deploy

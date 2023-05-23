@@ -10,7 +10,8 @@
   "scripts": {
     "test": "turbo run test",
     "build": "turbo run build",
-    "lint": "turbo run lint"
+    "lint": "turbo run lint",
+    "pre-deploy": "turbo run pre-deploy"
   },
   "author": "Dmitry Varennikov",
   "license": "ISC",

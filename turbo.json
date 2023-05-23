@@ -5,6 +5,9 @@
       "dependsOn": ["^build"]
     },
     "lint": {},
-    "test": {}
+    "test": {},
+    "pre-deploy": {
+      "dependsOn": ["lint", "test", "build"]
+    }
   }
 }
