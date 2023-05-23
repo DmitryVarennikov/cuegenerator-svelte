@@ -15,7 +15,7 @@
     "pre-deploy": "turbo run pre-deploy",
     "dev": "turbo run dev",
     "simple-hooks:install": "npx simple-git-hooks",
-    "postinstall": "npm run simple-hooks:install"
+    "postinstall": "npm run simple-hooks:install && npx playwright install --with-deps"
   },
   "author": "Dmitry Varennikov",
   "license": "ISC",
