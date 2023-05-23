@@ -1,0 +1,27 @@
+{
+  "name": "@cuegenerator-v2/core",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Core functionality for the Cuegenerator app",
+  "author": "Dmitry Varennikov",
+  "license": "ISC",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --ext .js,.ts .",
+    "lint:fix": "eslint --fix --ext .js,.ts .",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.5.0",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^14.11.2",
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
+    "@typescript-eslint/parser": "^5.59.7",
+    "eslint": "^8.41.0",
+    "eslint-plugin-import": "^2.27.5",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.4"
+  }
+}
