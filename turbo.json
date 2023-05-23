@@ -6,6 +6,7 @@
       "outputs": [".svelte-kit/**", ".vercel/**"]
     },
     "lint": {},
+    "format": {},
     "test": {},
     "pre-deploy": {
       "dependsOn": ["lint", "test", "build"]

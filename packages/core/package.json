@@ -10,7 +10,8 @@
     "test": "jest",
     "lint": "eslint --ext .js,.ts .",
     "lint:fix": "eslint --fix --ext .js,.ts .",
-    "build": "tsc"
+    "build": "tsc",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@jest/globals": "^29.5.0",
