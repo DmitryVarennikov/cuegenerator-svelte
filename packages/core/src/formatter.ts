@@ -15,7 +15,7 @@ export class Formatter {
 
   formatTracklist(tracklist: TrackList, regionsList: Timings, globalPerformer: string) {
     let output = '';
-    for (var i = 0; i < tracklist.length; i++) {
+    for (let i = 0; i < tracklist.length; i++) {
       const row = tracklist[i];
       const performer = row.performer || globalPerformer;
       const time = regionsList[i] ? timeEntryToString(regionsList[i]) : row.time;

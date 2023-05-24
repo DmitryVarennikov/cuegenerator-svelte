@@ -27,8 +27,8 @@ describe('Formatter', () => {
     const regionsList: Timings = [];
     const globalPerformer = 'Bobina';
 
-    var actual = formatter.formatTracklist(tracklist, regionsList, globalPerformer);
-    var expected = '';
+    const actual = formatter.formatTracklist(tracklist, regionsList, globalPerformer);
+    let expected = '';
     expected += '  TRACK 01 AUDIO\n';
     expected += '    PERFORMER "Bobina"\n';
     expected += '    TITLE "Miami Echoes"\n';
@@ -41,8 +41,8 @@ describe('Formatter', () => {
     const regionsList: Timings = [{ mn: 2, sc: 41, fr: 0 }]; //['02:41:00'];
     const globalPerformer = 'Bobina';
 
-    var actual = formatter.formatTracklist(tracklist, regionsList, globalPerformer);
-    var expected = '';
+    const actual = formatter.formatTracklist(tracklist, regionsList, globalPerformer);
+    let expected = '';
     expected += '  TRACK 01 AUDIO\n';
     expected += '    PERFORMER "Bobina"\n';
     expected += '    TITLE "Miami Echoes"\n';

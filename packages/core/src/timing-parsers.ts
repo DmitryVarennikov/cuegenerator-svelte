@@ -15,7 +15,7 @@ export const adobeAudition = (value: string): TimeEntry | undefined => {
 };
 
 export const soundforge = (value: string): TimeEntry | undefined => {
-  const matches = value.match(/(\d{2}:\d{2}:\d{2}[\.,:]\d{2})/i);
+  const matches = value.match(/(\d{2}:\d{2}:\d{2}[.,:]\d{2})/i);
   if (null === matches) return undefined;
 
   const time = matches[0].split(':');
@@ -29,7 +29,7 @@ export const soundforge = (value: string): TimeEntry | undefined => {
     sc = time.shift();
     fr = time.shift();
   } else {
-    let sc_fr = time.shift() || '';
+    const sc_fr = time.shift() || '';
     let sc_fr_split;
     switch (true) {
       case -1 != sc_fr.indexOf('.'):
@@ -53,7 +53,7 @@ export const soundforge = (value: string): TimeEntry | undefined => {
 
 // Nero/Winamp formats mm(m):ss(:|.)ii
 export const winampNero = (value: string): TimeEntry | undefined => {
-  const matches = value.match(/(\d{2,3}:\d{2}[\.:]\d{2})/i);
+  const matches = value.match(/(\d{2,3}:\d{2}[.:]\d{2})/i);
   if (null === matches) return undefined;
 
   const time = matches[0].split(':');
@@ -61,7 +61,7 @@ export const winampNero = (value: string): TimeEntry | undefined => {
   let sc;
   let fr;
   if (time.length == 1) {
-    var sc_fr = time[0].split('.');
+    const sc_fr = time[0].split('.');
     sc = sc_fr.shift();
     fr = sc_fr.shift();
   } else {

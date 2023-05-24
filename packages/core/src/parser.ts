@@ -38,7 +38,7 @@ export class ParserHelper {
   }
 
   separateTime(value: string) {
-    var time = '',
+    let time = '',
       residue = '';
 
     // ask to increase minutes up to 9999 referred to the "h:m" not "h:m:f" format
@@ -46,8 +46,8 @@ export class ParserHelper {
     // https://github.com/dVaffection/cuegenerator/issues/14
 
     //                          01.     9999:53 | 999:02:28
-    var pattern = /(?:\d{2}\.)?\[?((?:\d{1,3}:)?\d{1,4}:\d{2})\]?.*/i;
-    var matches = value.match(pattern);
+    const pattern = /(?:\d{2}\.)?\[?((?:\d{1,3}:)?\d{1,4}:\d{2})\]?.*/i;
+    const matches = value.match(pattern);
 
     if (matches && matches[1]) {
       time = matches[1].trim();
@@ -96,8 +96,8 @@ export class ParserHelper {
   }
 
   cleanOffTime(value: string) {
-    var pattern = /^(?:\]? )?(?:\d{2}\)?\.? )?(.*)$/i;
-    var matches = value.match(pattern);
+    const pattern = /^(?:\]? )?(?:\d{2}\)?\.? )?(.*)$/i;
+    const matches = value.match(pattern);
 
     if (matches && matches[1]) {
       value = matches[1];
