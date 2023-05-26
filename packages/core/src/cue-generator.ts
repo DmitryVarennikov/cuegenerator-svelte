@@ -17,6 +17,8 @@ export class CueGenerator {
   constructor(readonly parser: Parser, readonly formatter: Formatter) {}
 
   create({ performer, title, fileName, fileType, trackList, regionsList }: CueProps) {
+    if (!performer && !title && !fileName && !trackList) return '';
+
     const formattedPerformer = this.formatter.formatPerformer(this.parser.parsePerformer(performer));
     const formattedTitle = this.formatter.formatTitle(this.parser.parseTitle(title));
     const formattedFileName = this.formatter.formatFilename(this.parser.parseFileName(fileName), fileType);
