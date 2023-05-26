@@ -10,7 +10,7 @@
     "test": "jest",
     "lint": "eslint --ext .js,.ts .",
     "lint:fix": "eslint --fix --ext .js,.ts .",
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "format": "prettier --write .",
     "dev": "tsc -w"
   },
