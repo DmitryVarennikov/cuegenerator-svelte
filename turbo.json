@@ -7,9 +7,11 @@
     },
     "lint": {},
     "format": {},
-    "test": {},
+    "test": {
+      "dependsOn": ["build"]
+    },
     "pre-deploy": {
-      "dependsOn": ["lint", "test", "build"]
+      "dependsOn": ["lint", "test"]
     },
     "dev": {
       "cache": false,
