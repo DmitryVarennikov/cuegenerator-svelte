@@ -1,7 +1,11 @@
 {
-  "name": "svelte",
+  "name": "@cuegenerator-v2/svelte",
   "version": "0.0.1",
   "private": true,
+  "description": "Cuegenerator is a small utility which facilitates creating cue files from track lists",
+  "author": "Dmitry Varennikov",
+  "license": "ISC",
+  "type": "module",
   "scripts": {
     "dev": "vite dev --open",
     "build": "vite build",
@@ -31,5 +35,7 @@
     "vite": "^4.3.0",
     "vitest": "^0.25.3"
   },
-  "type": "module"
+  "dependencies": {
+    "@cuegenerator-v2/core": "^1.0.0"
+  }
 }
