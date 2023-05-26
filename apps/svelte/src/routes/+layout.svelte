@@ -29,5 +29,7 @@
     margin-top: 2em;
     width: 100%;
     max-width: 1024px;
+    /* this is an approximate subtraction */
+    height: calc(100vh - 2em - 2em - 1em - 2em - 4em);
   }
 </style>

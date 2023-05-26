@@ -62,12 +62,14 @@
     display: grid;
     gap: 1em;
     grid-template-columns: 1fr 1fr;
+    height: 100%;
   }
   .panel {
     display: grid;
   }
   .panel-left {
     grid-template-columns: 100px 1fr;
+    grid-template-rows: repeat(4, auto) 1fr auto;
   }
   input,
   select,
@@ -82,9 +84,6 @@
   input,
   select {
     height: 1.8em;
-  }
-  #trackList {
-    height: 300px;
   }
   #regionsList {
     height: 10em;
