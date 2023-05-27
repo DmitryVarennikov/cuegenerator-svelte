@@ -12,11 +12,12 @@
     --font-size: 17px;
     --primary-color: #fff9e6;
     --secondary-color: #fcdf79;
+    --tertiary-color: #4d4d4d;
   }
   :global(body) {
     margin: 0;
     padding: 0;
-    background-color: #4d4d4d;
+    background-color: var(--tertiary-color);
     color: var(--primary-color);
     font-family: 'Trebuchet MS', Arial, Tahoma;
     font-size: var(--font-size);
