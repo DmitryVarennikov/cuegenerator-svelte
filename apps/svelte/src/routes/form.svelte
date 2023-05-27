@@ -18,7 +18,7 @@
   };
   const onChange = (e: Event) => {
     const target = e.target! as HTMLFormElement;
-    state = { ...state, [target.name]: target.value };
+    state = { ...state, [target.name]: target.value.trim() };
   };
 
   let cue = '';
