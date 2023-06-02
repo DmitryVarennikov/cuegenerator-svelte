@@ -1,15 +1,24 @@
 <script lang="ts">
-  import { cueStore } from '../stores';
+  import { cueStore, cueHistoryStore } from '../stores';
+  import type { CueState } from '../types';
   import { makeCueFileName } from '../utils';
+  import { createEventDispatcher } from 'svelte';
+
+  const prevCueDispatch = createEventDispatcher<{ onLoadPrevCue: CueState }>();
 
   let cue = '';
   let fileName = '';
+  let cueState: CueState | undefined;
+  let prevCueState: CueState | undefined;
+
   cueStore.subscribe((state) => {
+    cueState = state;
     if (!state) return;
     const { input, output } = state;
     cue = output.cue;
     fileName = input.fileName;
   });
+  cueHistoryStore.subscribe((cueState) => (prevCueState = cueState));
 
   const saveCueAsFile = (cue: string, fileName: string) => {
     const blob = new Blob([cue], { type: 'octet/stream' });
@@ -20,7 +29,13 @@
     a.click();
   };
 
-  const onSaveCueToFileClick = () => saveCueAsFile(cue, fileName);
+  const onSaveCueToFileClick = () => {
+    saveCueAsFile(cue, fileName);
+    if (cueState) cueHistoryStore.set(cueState);
+  };
+  const onLoadPrevCueClick = () => {
+    if (prevCueState) prevCueDispatch('onLoadPrevCue', prevCueState);
+  };
 </script>
 
 <input
@@ -30,7 +45,13 @@
   value="Save Cue to file"
   class="btn btn-save-cue"
 />
-<input type="button" on:click={() => alert('Load my prev Cue!')} value="Load my prev Cue" class="btn btn-load-cue" />
+<input
+  type="button"
+  on:click={onLoadPrevCueClick}
+  disabled={!prevCueState}
+  value="Load my prev Cue"
+  class="btn btn-load-cue"
+/>
 <div class="clear" />
 
 <style>

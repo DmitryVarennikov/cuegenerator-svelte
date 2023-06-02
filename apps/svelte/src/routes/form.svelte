@@ -1,31 +1,24 @@
 <script context="module" lang="ts">
   import { cueGeneratorFactory } from '@cuegenerator-v2/core';
   import { cueStore } from '../stores';
-  import type { CueInputState } from '../types';
 
   const cueGenerator = cueGeneratorFactory();
   const fileTypes = ['MP3', 'AAC', 'AIFF', 'ALAC', 'BINARY', 'FLAC', 'MOTOROLA', 'WAVE'];
 </script>
 
 <script lang="ts">
-  let state: CueInputState = {
-    title: '',
-    performer: '',
-    fileName: '',
-    fileType: fileTypes[0],
-    trackList: '',
-    regionsList: ''
-  };
-  const onChange = (e: Event) => {
-    const target = e.target! as HTMLFormElement;
-    state = { ...state, [target.name]: target.value.trim() };
-  };
-
+  export let performer = '';
+  export let title = '';
+  export let fileName = '';
+  export let fileType = fileTypes[0];
+  export let trackList = '';
+  export let regionsList = '';
   let cue = '';
+
   $: {
-    cue = cueGenerator.create(state);
+    cue = cueGenerator.create({ performer, title, fileName, fileType, trackList, regionsList });
     cueStore.set({
-      input: { ...state },
+      input: { performer, title, fileName, fileType, trackList, regionsList },
       output: { cue }
     });
   }
@@ -35,21 +28,21 @@
   <section class="panel panel-left">
     <label for="performer">Performer:</label>
     <!-- svelte-ignore a11y-autofocus -->
-    <input type="text" name="performer" on:keyup={onChange} id="performer" autocomplete="off" autofocus={true} />
+    <input type="text" name="performer" id="performer" autocomplete="off" autofocus={true} bind:value={performer} />
     <label for="title">Title:</label>
-    <input type="text" name="title" on:keyup={onChange} id="title" autocomplete="off" />
+    <input type="text" name="title" id="title" autocomplete="off" bind:value={title} />
     <label for="fileName">File name:</label>
-    <input type="text" name="fileName" on:keyup={onChange} id="fileName" autocomplete="off" />
+    <input type="text" name="fileName" id="fileName" autocomplete="off" bind:value={fileName} />
     <label for="fileType">File type:</label>
-    <select name="fileType" id="fileType" on:change={onChange}>
+    <select name="fileType" id="fileType" bind:value={fileType}>
       {#each fileTypes as fileType}
         <option value={fileType}>{fileType}</option>
       {/each}
     </select>
     <label for="trackList">Tracklist:</label>
-    <textarea name="trackList" on:keyup={onChange} id="trackList" autocomplete="off" />
+    <textarea name="trackList" id="trackList" autocomplete="off" bind:value={trackList} />
     <label for="regionsList">Timings: <sup><a target="_blank" href="/help" tabindex="-1">Help</a></sup></label>
-    <textarea name="regionsList" on:keyup={onChange} id="regionsList" autocomplete="off" />
+    <textarea name="regionsList" id="regionsList" autocomplete="off" bind:value={regionsList} />
   </section>
   <section class="panel">
     <textarea id="cue" readonly value={cue} />
