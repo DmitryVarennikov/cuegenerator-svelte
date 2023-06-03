@@ -13,7 +13,7 @@
     "lint": "turbo run lint",
     "format": "turbo run format",
     "pre-deploy": "turbo run pre-deploy",
-    "deploy": "firebase deploy --only hosting --project cuegenerator-v2 --json",
+    "deploy": "npm run pre-deploy && firebase deploy --only hosting --project cuegenerator-v2 --json",
     "dev": "turbo run dev",
     "simple-hooks:install": "npx simple-git-hooks",
     "postinstall": "npm run simple-hooks:install && npx playwright install --with-deps"
@@ -21,10 +21,8 @@
   "author": "Dmitry Varennikov",
   "license": "ISC",
   "devDependencies": {
+    "firebase-tools": "^12.3.0",
     "simple-git-hooks": "^2.8.1",
     "turbo": "^1.9.9"
-  },
-  "dependencies": {
-    "firebase": "^9.22.1"
   }
 }
