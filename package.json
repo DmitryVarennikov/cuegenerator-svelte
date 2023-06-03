@@ -23,6 +23,6 @@
   "devDependencies": {
     "firebase-tools": "^12.3.0",
     "simple-git-hooks": "^2.8.1",
-    "turbo": "^1.9.9"
+    "turbo": "^1.10.1"
   }
 }
