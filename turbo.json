@@ -13,9 +13,6 @@
     "pre-deploy": {
       "dependsOn": ["lint", "test"]
     },
-    "deploy": {
-      "dependsOn": ["pre-deploy"]
-    },
     "dev": {
       "cache": false,
       "persistent": true

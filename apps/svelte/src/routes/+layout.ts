@@ -8,7 +8,7 @@ console.log('App init', { MODE: import.meta.env.MODE });
 if (import.meta.env.MODE === 'production') {
   const {
     VITE_API_KEY,
-    VIET_AUTH_DOMAIN,
+    VITE_AUTH_DOMAIN,
     VITE_PROJECT_ID,
     VITE_STORAGE_BUCKET,
     VITE_MESSAGING_SENDER_ID,
@@ -17,7 +17,7 @@ if (import.meta.env.MODE === 'production') {
   } = import.meta.env;
   const config = {
     apiKey: VITE_API_KEY,
-    authDomain: VIET_AUTH_DOMAIN,
+    authDomain: VITE_AUTH_DOMAIN,
     projectId: VITE_PROJECT_ID,
     storageBucket: VITE_STORAGE_BUCKET,
     messagingSenderId: VITE_MESSAGING_SENDER_ID,
