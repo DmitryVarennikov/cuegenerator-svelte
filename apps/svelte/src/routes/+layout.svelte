@@ -2,6 +2,10 @@
   import Header from './header.svelte';
 </script>
 
+<svelte:head>
+  <title>{import.meta.env.VITE_APP_TITLE}</title>
+</svelte:head>
+
 <div class="container">
   <Header />
   <slot />

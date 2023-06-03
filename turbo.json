@@ -3,7 +3,7 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".svelte-kit/**", ".vercel/**"]
+      "outputs": [".svelte-kit/**", ".vercel/**", "public/**"]
     },
     "lint": {},
     "format": {},
@@ -12,6 +12,9 @@
     },
     "pre-deploy": {
       "dependsOn": ["lint", "test"]
+    },
+    "deploy": {
+      "dependsOn": ["pre-deploy"]
     },
     "dev": {
       "cache": false,

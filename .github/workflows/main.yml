@@ -1,4 +1,4 @@
-name: Pre-deploy main branch on a push
+name: Deploy main branch on a push
 on:
   push:
     branches:
@@ -17,9 +17,7 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
 
       - run: npm ci
-      - run: npm run lint
-      - run: npm run test
-      - run: npm run build
+      - run: npm run deploy
 
       - uses: actions/upload-artifact@v3
         if: always()
