@@ -25,7 +25,7 @@ if (import.meta.env.MODE === 'production') {
     measurementId: VITE_MEASUREMENT_ID
   };
   const app = initializeApp(config);
-//   getAnalytics(app);
+  //   getAnalytics(app);
   console.log('firebase initiated', { config });
 } else {
   console.log('firebase skipped');
