@@ -1,5 +1,15 @@
 {
   "projects": {
-    "default": "cuegenerator-v2"
-  }
+    "default": "cuegenerator"
+  },
+  "targets": {
+    "cuegenerator": {
+      "hosting": {
+        "cuegenerator-v3": [
+          "cuegenerator-v3"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
