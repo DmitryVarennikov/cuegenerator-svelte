@@ -13,7 +13,7 @@
     "lint": "turbo run lint",
     "format": "turbo run format",
     "pre-deploy": "turbo run pre-deploy",
-    "deploy": "npm run pre-deploy && firebase deploy --only hosting --project cuegenerator-v2 --json",
+    "deploy": "npm run pre-deploy && npm run firebase deploy -- --only hosting:cuegenerator-v3",
     "preview": "npm run firebase hosting:channel:deploy tmp",
     "dev": "turbo run dev",
     "simple-hooks:install": "npx simple-git-hooks",
