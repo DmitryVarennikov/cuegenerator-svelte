@@ -9,10 +9,13 @@ const config = {
 
   kit: {
     adapter: adapter({
-      pages: '../../public',
-      assets: '../../public',
+      pages: 'public',
+      assets: 'public',
       fallback: null,
-      precompress: false
+      precompress: false,
+      prerender: {
+        default: true
+      }
     })
   }
 };

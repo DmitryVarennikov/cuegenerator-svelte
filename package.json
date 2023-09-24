@@ -14,6 +14,7 @@
     "format": "turbo run format",
     "pre-deploy": "turbo run pre-deploy",
     "deploy": "npm run pre-deploy && firebase deploy --only hosting --project cuegenerator-v2 --json",
+    "preview": "npm run firebase hosting:channel:deploy tmp",
     "dev": "turbo run dev",
     "simple-hooks:install": "npx simple-git-hooks",
     "postinstall": "npm run simple-hooks:install && npx playwright install --with-deps",

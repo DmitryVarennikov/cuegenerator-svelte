@@ -2,11 +2,17 @@
   "hosting": [
     {
       "site": "cuegenerator-v3",
-      "public": "public",
+      "public": "apps/svelte/public",
       "ignore": [
         "firebase.json",
         "**/.*",
         "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
       ]
     }
   ]

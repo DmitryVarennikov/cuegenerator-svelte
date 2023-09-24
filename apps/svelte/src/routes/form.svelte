@@ -41,7 +41,7 @@
     </select>
     <label for="trackList">Tracklist:</label>
     <textarea name="trackList" id="trackList" autocomplete="off" bind:value={trackList} />
-    <label for="regionsList">Timings: <sup><a target="_blank" href="/help.html" tabindex="-1">Help</a></sup></label>
+    <label for="regionsList">Timings: <sup><a target="_blank" href="/help" tabindex="-1">Help</a></sup></label>
     <textarea name="regionsList" id="regionsList" autocomplete="off" bind:value={regionsList} />
   </section>
   <section class="panel">

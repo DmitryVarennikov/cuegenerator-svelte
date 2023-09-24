@@ -8,3 +8,4 @@ vite.config.ts.timestamp-*
 .turbo
 test-results
 *.local
+public/*
