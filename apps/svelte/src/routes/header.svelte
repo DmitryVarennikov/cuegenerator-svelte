@@ -1,6 +1,20 @@
+<script context="module" lang="ts">
+  import { onMount } from 'svelte';
+  import { apiCueCounterStore } from '../stores';
+  import { apiServiceFactory } from '../services';
+  const apiService = apiServiceFactory();
+</script>
+
+<script lang="ts">
+  onMount(async () => {
+    const counter = await apiService.getCounter();
+    apiCueCounterStore.set(counter);
+  });
+</script>
+
 <div class="grid">
   <a href="/"><img src="images/CUEgenerator.png" alt="Cuegenerator logo" /></a>
-  <div title="cues-counter">Not implemented</div>
+  <div title="cues-counter">{$apiCueCounterStore}</div>
   <div style="text-align: right">
     <a href="https://github.com/DmitryVarennikov/cuegenerator-v2" target="_blank" rel="noreferrer">
       Leave your feedback on GitHub

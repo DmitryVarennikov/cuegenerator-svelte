@@ -25,3 +25,5 @@ jobs:
           channelId: live
           projectId: cuegenerator
           target: cuegenerator-v3
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks

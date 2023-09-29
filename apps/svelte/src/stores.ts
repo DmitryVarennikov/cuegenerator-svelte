@@ -23,3 +23,5 @@ export function createCueHistoryStore(stackLimit = 10) {
   };
 }
 export const cueHistoryStore = createCueHistoryStore();
+
+export const apiCueCounterStore = writable<number>(0);
