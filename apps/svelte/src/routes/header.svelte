@@ -16,7 +16,7 @@
   <a href="/"><img src="images/CUEgenerator.png" alt="Cuegenerator logo" /></a>
   <div title="cues-counter">{$apiCueCounterStore}</div>
   <div style="text-align: right">
-    <a href="https://github.com/DmitryVarennikov/cuegenerator-v2" target="_blank" rel="noreferrer">
+    <a href="https://github.com/DmitryVarennikov/cuegenerator-svelte" target="_blank" rel="noreferrer">
       Leave your feedback on GitHub
     </a>
   </div>
