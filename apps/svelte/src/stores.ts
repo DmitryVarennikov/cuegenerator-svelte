@@ -18,8 +18,7 @@ export function createCueHistoryStore(stackLimit = 10) {
         // store updated value in the local storage
         if (browser) window.localStorage.setItem(cueHistoryKey, JSON.stringify(stack));
       }),
-    set: (cue: CueState) =>
-      update((stack) => [cue, ...(stack.length > stackLimit ? stack.slice(0, stackLimit) : stack)])
+    set: (cue: CueState) => update(stack => [cue, ...(stack.length > stackLimit ? stack.slice(0, stackLimit) : stack)])
   };
 }
 export const cueHistoryStore = createCueHistoryStore();

@@ -14,14 +14,14 @@
   let cueState: CueState | undefined;
   let prevCueState: CueState | undefined;
 
-  cueStore.subscribe((state) => {
+  cueStore.subscribe(state => {
     cueState = state;
     if (!state) return;
     const { input, output } = state;
     cue = output.cue;
     fileName = input.fileName;
   });
-  cueHistoryStore.subscribe((cueState) => (prevCueState = cueState));
+  cueHistoryStore.subscribe(cueState => (prevCueState = cueState));
 
   const saveCueAsFile = (cue: string, fileName: string) => {
     const blob = new Blob([cue], { type: 'octet/stream' });

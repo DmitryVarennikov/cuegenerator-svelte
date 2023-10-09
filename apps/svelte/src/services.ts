@@ -54,7 +54,7 @@ class AnalyticService {
     }
   }
 
-  private static areOptions = (options: Object) => !Object.values(options).every(v => !v);
+  private static areOptions = (options: {}) => !Object.values(options).every(v => !v);
   private logEvent(event: AnalyticsEvent) {
     if (this.analytics) logEvent<AnalyticsEvent>(this.analytics, event);
   }
