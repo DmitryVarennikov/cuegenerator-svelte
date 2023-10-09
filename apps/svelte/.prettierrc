@@ -5,5 +5,6 @@
   "printWidth": 120,
   "plugins": ["prettier-plugin-svelte"],
   "pluginSearchDirs": ["."],
+  "arrowParens": "avoid",
   "overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
 }

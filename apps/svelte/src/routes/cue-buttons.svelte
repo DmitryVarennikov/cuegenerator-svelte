@@ -3,8 +3,7 @@
   import type { CueState } from '../types';
   import { makeCueFileName } from '../utils';
   import { createEventDispatcher } from 'svelte';
-  import { apiServiceFactory } from '../services';
-  const apiService = apiServiceFactory();
+  import { apiService, analyticService } from '../services';
 </script>
 
 <script lang="ts">
@@ -37,6 +36,7 @@
     saveCueAsFile(cue, fileName);
     if (cueState) {
       cueHistoryStore.set(cueState);
+      analyticService.logCueFileSaved();
 
       const counter = await apiService.postCounter({ ...cueState.input, ...cueState.output });
       if (counter) apiCueCounterStore.set(counter);
@@ -44,6 +44,7 @@
   };
   const onLoadPrevCueClick = () => {
     if (prevCueState) prevCueDispatch('onLoadPrevCue', prevCueState);
+    analyticService.logPrevCueLoaded();
   };
 </script>
 

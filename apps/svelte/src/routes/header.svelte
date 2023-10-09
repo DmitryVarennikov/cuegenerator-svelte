@@ -1,8 +1,7 @@
 <script context="module" lang="ts">
   import { onMount } from 'svelte';
   import { apiCueCounterStore } from '../stores';
-  import { apiServiceFactory } from '../services';
-  const apiService = apiServiceFactory();
+  import { apiService } from '../services';
 </script>
 
 <script lang="ts">

@@ -1,6 +1,9 @@
+import { initializeApp, type FirebaseOptions } from 'firebase/app';
+import { initializeAnalytics, logEvent } from 'firebase/analytics';
 import type { ApiRequest, ApiResponse } from './types';
+import { firebaseConfig } from './config';
 
-export class ApiService {
+class ApiService {
   private baseUrl = import.meta.env.VITE_API_BASE_URL;
   private token?: string;
 
@@ -37,5 +40,31 @@ export class ApiService {
   }
 }
 
-let apiService: ApiService | undefined = undefined;
-export const apiServiceFactory = () => (apiService ? apiService : (apiService = new ApiService()));
+export enum AnalyticsEvent {
+  CUE_FILE_SAVED = 'cue_file_saved',
+  PREV_CUE_LOADED = 'prev_cue_loaded'
+}
+
+class AnalyticService {
+  private analytics;
+  constructor(options: FirebaseOptions) {
+    if (AnalyticService.areOptions(options)) {
+      const app = initializeApp(options);
+      this.analytics = initializeAnalytics(app);
+    }
+  }
+
+  private static areOptions = (options: Object) => !Object.values(options).every(v => !v);
+  private logEvent(event: AnalyticsEvent) {
+    if (this.analytics) logEvent<AnalyticsEvent>(this.analytics, event);
+  }
+  logCueFileSaved() {
+    this.logEvent(AnalyticsEvent.CUE_FILE_SAVED);
+  }
+  logPrevCueLoaded() {
+    this.logEvent(AnalyticsEvent.PREV_CUE_LOADED);
+  }
+}
+
+export const apiService = new ApiService();
+export const analyticService = new AnalyticService(firebaseConfig);
